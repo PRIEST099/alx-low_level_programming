@@ -1,5 +1,5 @@
 #include<stdio.h>
-/*
+/**
  * main - a program that prints a line
  * Return: 0 (Success)
  */
