@@ -1,32 +1,28 @@
-#include <stdio.h>
+#include<stdio.h>
 /**
- * main - prints the first fibbonaci  50 numbers
- * Return: 0
+ * main - prints fibbonacci
+ * Return: alsways 0 (Success)
  */
-void fibo(int a)
+int main(void)
 {
-	static int n1 = 1;
-	static int n2 = 2;
-	static int n3;
+	int a, b, temp, i;
 
-	if (a > 0)
+	a = 1;
+	b = 2;
+	i = 2;
+	printf("%d, %d, ", a, b);
+	while (i < 50)
 	{
-		n3 = n1 + n2;
-		n1 = n2;
-		n2 = n3;
-		printf("%d", n3);
-		if (a != 1)
+		temp = a + b;
+		printf("%d", temp);
+		if (i != 49)
 		{
 			printf(", ");
 		}
-		fibo(a - 1);
+		a = b;
+		b = temp;
+		i++;
 	}
-}
-int main()
-{
-	printf("%d, %d, ", 1, 2);
-	fibo(48);
 	printf("\n");
 	return (0);
 }
-
