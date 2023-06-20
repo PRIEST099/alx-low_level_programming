@@ -5,16 +5,17 @@
  */
 int main(void)
 {
-	int a, b, temp, i;
+	long long int a, b, temp;
+	int i;
 
 	a = 1;
 	b = 2;
 	i = 2;
-	printf("%d, %d, ", a, b);
+	printf("%lld, %lld, ", a, b);
 	while (i < 50)
 	{
 		temp = a + b;
-		printf("%d", temp);
+		printf("%lld", temp);
 		if (i != 49)
 		{
 			printf(", ");
