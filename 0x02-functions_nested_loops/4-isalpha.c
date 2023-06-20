@@ -1,6 +1,7 @@
 #include "main.h"
 /**
  * _isalpha - return if input is a letter
+ * @c: print character
  * Return: null
  */
 int _isalpha(int c)

@@ -2,6 +2,7 @@
 #include "main.h"
 /**
  * print_to_98 - f prints numbers from n to 98
+ * @n: returns a range to a number
  * Return: null
  */
 void print_to_98(int n)

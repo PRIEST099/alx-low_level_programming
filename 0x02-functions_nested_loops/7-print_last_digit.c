@@ -1,6 +1,7 @@
 #include "main.h"
 /**
  * print_last_digit - prints the last digit of a number
+ * @a: returns a reminder
  * Return: null
  */
 int print_last_digit(int a)
