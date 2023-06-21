@@ -9,6 +9,7 @@ int main(void)
 
 	a = 1;
 	b = 2;
+	sum = 0;
 
 	while (a <= 4000000)
 	{
