@@ -1,28 +1,30 @@
 #include<stdio.h>
 /**
- * main - prints fibbonacci
- * Return: alsways 0 (Success)
+ * main - prints fibbonacci series
+ * Return: always 0 (success)
  */
 int main(void)
 {
-	long long int a, b, temp;
-	int i;
+	int i = 0;
+	long j = 1, k = 2;
 
-	a = 1;
-	b = 2;
-	i = 2;
-	printf("%lld, %lld, ", a, b);
 	while (i < 50)
 	{
-		temp = a + b;
-		printf("%lld", temp);
-		if (i != 49)
+		if (i == 0)
 		{
-			printf(", ");
+			printf("%ld", j);
 		}
-		a = b;
-		b = temp;
-		i++;
+		else if (i == 1)
+		{
+			printf(", %ld", k);
+		}
+		else
+		{
+			k += j;
+			j = k - j;
+			printf(", %ld", k);
+		}
+		++i;
 	}
 	printf("\n");
 	return (0);
