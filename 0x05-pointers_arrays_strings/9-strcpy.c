@@ -5,7 +5,7 @@
  * @dest: to be returned string
  * @src: to copy string
  * Author: Ahadi
- * Returnh: null
+ * Return: dest if success
  */
 
 char *_strcpy(char *dest, char *src)
