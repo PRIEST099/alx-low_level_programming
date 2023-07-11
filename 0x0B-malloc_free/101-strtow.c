@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * count_word - counts words in a string
+ * count_words - counts words in a string
  * @str: string to evaluate
  *
  * Return: word counted
