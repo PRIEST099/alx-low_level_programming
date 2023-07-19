@@ -8,7 +8,7 @@
  * Return: null
  */
 
-coid print_o(char *a, int n)
+void print_o(char *a, int n)
 {
 	int i;
 
