@@ -4,21 +4,19 @@
 /**
  * print_o - prints opcodes
  * @n: number of bytes to print
+ * @p: main function address
  * Return: null
  */
 
-void print_o(unsigned int n)
+void print_o(unsigned int n, char *p)
 {
-	unsigned char *p = (unsigned char *)print_o;
-	unsigned int count = 0;
+	unsigned int count;
 
-	while (count < n)
+	for (count = 0; count < n; count++)
 	{
-		printf("%02x", *p);
-		if (count + 1 != n)
+		printf("%.2hhx", p[i]);
+		if (count < n - 1)
 			printf(" ");
-		p++;
-		count++;
 	}
 	printf("\n");
 }
@@ -48,7 +46,7 @@ int main(int argc, char *argv[])
 		exit(2);
 	}
 
-	print_o(b);
+	print_o((char *)&main, b);
 
 	return (0);
 }
