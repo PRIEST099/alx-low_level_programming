@@ -3,20 +3,22 @@
 
 /**
  * print_o - prints opcodes
- * @n: number of bytes to print
- * @p: main function address
+ * @a: main function address
+ * @n: number of bytes
  * Return: null
  */
 
-void print_o(unsigned int n, char *p)
+coid print_o(char *a, int n)
 {
-	unsigned int count;
+	int i;
 
-	for (count = 0; count < n; count++)
+	for (i = 0; i < n; i++)
 	{
-		printf("%.2hhx", p[i]);
-		if (count < n - 1)
+		printf("%.2hhx", a[i]);
+		if (i < n - 1)
+		{
 			printf(" ");
+		}
 	}
 	printf("\n");
 }
@@ -24,13 +26,13 @@ void print_o(unsigned int n, char *p)
 /**
  * main - main function
  * @argc: argument count
- * @argv: argument bector
- * Return: integer status
+ * @argv: argument vector
+ * Return: integer
  */
 
 int main(int argc, char *argv[])
 {
-	int b;
+	int n;
 
 	if (argc != 2)
 	{
@@ -38,15 +40,13 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 
-	b = atoi(argv[1]);
-
-	if (b < 0)
+	n = atoi(argv[1]);
+	if (n < 0)
 	{
 		printf("Error\n");
 		exit(2);
 	}
-
-	print_o((char *)&main, b);
-
+	print_o((char *)&main, n);
 	return (0);
 }
+
