@@ -25,27 +25,26 @@ void print_all(const char * const format, ...)
 {
 	va_list args;
 	unsigned int i = 0;
-	char c, *s;
-	float f;
-	int num, middle;
+	int middle;
+	char *s;
 
 	va_start(args, format);
-	while (format && format[i])
+	if (format)
+	{
+
+	while (format[i])
 	{
 		middle = 1;
 		switch (format[i])
 		{
 			case 'c':
-				c = va_arg(args, int);
-				printf("%c", c);
+				printf("%c", va_arg(args, int));
 				break;
 			case 'i':
-				num = va_arg(args, int);
-				printf("%d", num);
+				printf("%d", va_arg(args, int));
 				break;
 			case 'f':
-				f = va_arg(args, double);
-				printf("%f", f);
+				printf("%f", va_arg(args, double));
 				break;
 			case 's':
 				s = va_arg(args, char *);
@@ -60,6 +59,7 @@ void print_all(const char * const format, ...)
 		}
 		print_space(format, i, middle);
 		i++;
+	}
 	}
 	va_end(args);
 	printf("\n");
