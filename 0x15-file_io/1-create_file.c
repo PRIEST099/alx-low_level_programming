@@ -1,36 +1,34 @@
 #include "main.h"
-#include <string.h>
 
 /**
- * create_file - creates a new file if it doesnt arleady exist
- * @filename: assiciated filename
- * @text_content: content to put on a file
- * Return: 1 on success, -1 on failure
+ * create_file - Create a file and write content to it.
+ * @filename: Name of the file to create.
+ * @text_content: Content to write to the file.
+ *
+ * Return: 1 on success, -1 on failure.
  */
-
 int create_file(const char *filename, char *text_content)
 {
-	int fd;
-	ssize_t str_length, len;
+	int fd, bytes_written, len = 0;
 
 	if (filename == NULL)
 		return (-1);
 
-	fd = open(filename, O_RDWR | O_CREAT | O_TRUNC | O_EXCL, 0600);
+	if (text_content != NULL)
+	{
+		while (text_content[len])
+			len++;
+	}
+
+	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 	if (fd == -1)
 		return (-1);
 
-	if (text_content == NULL)
-		str_length = 0;
-	else
-		str_length = strlen(text_content);
-	len = write(fd, text_content, str_length);
-	if (len == -1)
-	{
-		close(fd);
-		return (-1);
-	}
-
+	bytes_written = write(fd, text_content, len);
 	close(fd);
+
+	if (bytes_written == -1)
+		return (-1);
+
 	return (1);
 }
