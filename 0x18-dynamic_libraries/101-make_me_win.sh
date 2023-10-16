@@ -1,2 +1,3 @@
 #!/bin/bash
-LD_PRELOAD=/$PWD/hack.so ./gm 9 8 10 24 75 9
+gcc -shared -o hack.so -fPIC hack.c
+export LD_PRELOAD=./hack.so:$LD_LIBRARY_PATH
